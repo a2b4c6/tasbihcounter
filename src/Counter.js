@@ -40,8 +40,8 @@ reset = () => {
 // load saved state
 componentWillMount = () => {
     console.log("component loaded test");
-    this.state.dhikrCount = localStorage.getItem("dhikrCount", parseInt(this.state.dhikrCount));
-    this.state.hasanatCount = localStorage.getItem("hasanatCount", parseInt(this.state.hasanatCount));
+    this.state.dhikrCount = window.localStorage.getItem("dhikrCount");
+    this.state.hasanatCount = window.localStorage.getItem("hasanatCount");
     
 }
 
@@ -50,8 +50,8 @@ componentWillMount = () => {
 // save state when updating
 componentDidUpdate = () => {
     console.log("component updated test");
-    localStorage.setItem("dhikrCount", parseInt(this.state.dhikrCount));
-    localStorage.setItem("hasanatCount", parseInt(this.state.hasanatCount));
+    window.localStorage.setItem("dhikrCount", this.state.dhikrCount);
+    window.localStorage.setItem("hasanatCount", this.state.hasanatCount);
 }
 
 
