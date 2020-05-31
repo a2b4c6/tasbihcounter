@@ -14,8 +14,8 @@ constructor(props) {
 // increase state value
 increment = () => {
     this.setState({
-        dhikrCount: parseInt(this.state.dhikrCount)+ 1,
-        hasanatCount: parseInt(this.state.hasanatCount) + 10
+        dhikrCount: this.state.dhikrCount + 1,
+        hasanatCount: this.state.hasanatCount + 10
     });
 };
 
@@ -40,8 +40,8 @@ reset = () => {
 // load saved state
 componentWillMount = () => {
     console.log("component loaded test");
-    this.state.dhikrCount = window.localStorage.getItem("dhikrCount");
-    this.state.hasanatCount = window.localStorage.getItem("hasanatCount");
+    this.state.dhikrCount = parseInt(window.localStorage.getItem("dhikrCount") || 0);
+    this.state.hasanatCount = parseInt(window.localStorage.getItem("hasanatCount") || 0);
     
 }
 
