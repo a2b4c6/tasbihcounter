@@ -83,7 +83,7 @@ h1{
 {
   button{
     font-size: 1em;
-    padding: 0px 25px;
+    padding: 10px 25px;
     margin-right: 75px;
   }
   button:nth-last-child(1){
@@ -96,6 +96,22 @@ h1{
 }
 
 
+@media only screen and (max-width: 450px)
+{
+  button{
+    font-size: 1em;
+    padding: 10px 25px;
+    margin-right: 50px;
+  }
+  button:nth-last-child(1){
+    margin: 0px;
+  }
+
+  h1{
+    font-size: 1.5em;
+  }
+}
+
 @media only screen and (max-width: 385px)
 {
   body{
@@ -103,8 +119,8 @@ h1{
   }
 
   button{
-    font-size: 1em;
-    padding: 0px 25px;
+    font-size: 1.25em;
+    padding: 10px 25px;
     margin-right: 25px;
   }
   button:nth-last-child(1){
