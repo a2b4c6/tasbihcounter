@@ -26,6 +26,11 @@ button:hover{
   color: white;
   transition: 1s;
 }
+button:active{
+  background-color: black;
+  color: white;
+  transition: 0.375s;
+}
 button:nth-last-child(1){
   margin: 0px;
 }
