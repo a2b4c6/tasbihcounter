@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Tasbih Counter</h1>
-        <em><sup>Version: 1.0</sup></em>
+        <em><sup>Version: 1.1</sup></em>
 
         <Counter />
         <br />

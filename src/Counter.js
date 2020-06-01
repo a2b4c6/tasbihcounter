@@ -6,25 +6,36 @@ constructor(props) {
 
     // initialize state
     this.state = { 
-        dhikrCount: 0, 
-        hasanatCount: 0 
+        dhikrCount: parseInt(window.localStorage.getItem("dhikrCount") || 0),
+        hasanatCount: parseInt(window.localStorage.getItem("hasanatCount") || 0)
     };
 }
 
 // increase state value
 increment = () => {
-    this.setState({
+    this.setState(prevState => ({
         dhikrCount: this.state.dhikrCount + 1,
         hasanatCount: this.state.hasanatCount + 10
-    });
+    }));
 };
 
 // decrease state value
 decrement = () => {
-    this.setState({
-        dhikrCount: this.state.dhikrCount - 1,
-        hasanatCount: this.state.hasanatCount - 10
-    });
+
+    if(this.state.dhikrCount > 0)
+    {
+        this.setState(prevState => ({
+            dhikrCount: this.state.dhikrCount - 1,
+            hasanatCount: this.state.hasanatCount - 10
+        }));
+    }
+    else{
+        this.setState({
+            dhikrCount: this.state.dhikrCount - 0,
+            hasanatCount: this.state.hasanatCount - 0
+        });
+    }
+    
 };
 
 // reset state value
@@ -38,10 +49,9 @@ reset = () => {
 
 
 // load saved state
-componentWillMount = () => {
+componentWillDidMount = () => {
     console.log("component loaded test");
-    this.state.dhikrCount = parseInt(window.localStorage.getItem("dhikrCount") || 0);
-    this.state.hasanatCount = parseInt(window.localStorage.getItem("hasanatCount") || 0);
+    
     
 }
 
